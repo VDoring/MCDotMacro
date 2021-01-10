@@ -1,5 +1,5 @@
-# 오리지널 - 커맨드블럭 부서짐 버그 해결버전 GUI 탑제 유저커맨드갯수만큼 동작 + y값 조정 버전 - 작동OK
-# Command Length 적정길이 : 3000 ~ 5000
+# 오리지널 Release - 레드스톤 횃불 설치/제거 딜레이 조정 버전
+# Command Length 적정길이 : 2000 ~ 4000
 # 제대로 작동이 안된다면 길이를 더 줄여야 합니다.
 
 # https://wikidocs.net/85581 - pyautogui 가이드글
@@ -20,7 +20,7 @@ user_max_cmdnum = 0
 is_exit = 0 #유저가 프로그램을 그냥 종료했는지 확인
 
 root = Tk() #(root는 그냥 사용자가 임의로 설정할 수 있는 이름이다)
-root.title("MCDotMacro v0.1 (멀티라인 버전)") # 창 제목
+root.title("MCDotMacro v0.1.1 (멀티라인 버전)") # 창 제목
 root.geometry("400x290+760+400") # 창 크기
 root.resizable(False,False) # x,y 값 변경 불가(창 크기 변경불가)
 
@@ -34,7 +34,7 @@ gui_text_print4 = Label(root, text="마우스를 왼쪽 위 끝까지 옮기면 
 gui_text_print4.pack()
 gui_text_print5 = Label(root, text="[주의]", fg="red")
 gui_text_print5.pack()
-gui_text_print6 = Label(root, text="확인버튼을 누른 이후 끝날떄까지 아무 행동도 하지 말아주세요!\n적정 Command Length수는 4000~5000 입니다.")
+gui_text_print6 = Label(root, text="확인버튼을 누른 이후 끝날떄까지 아무 행동도 하지 말아주세요!\n적정 Command Length수는 2000~4000 입니다.")
 gui_text_print6.pack()
 gui_text_print_last = Label(root, text="\n\n---------------- 총 명령어 갯수를 입력하세요.(숫자만 입력) ----------------")
 gui_text_print_last.pack()
@@ -83,7 +83,7 @@ time.sleep(0.2)
 pyautogui.hotkey('ctrl', 'c')
 time.sleep(0.2)
 mccmdstr = pyperclip.paste()
-time.sleep(0.2)
+time.sleep(0.3)
 
 # 마인크래프트 창을 클릭해 게임 안으로 들어간다.
 original_minecraft_esc = pyautogui.locateOnScreen('mcESC.png')
@@ -118,7 +118,7 @@ pyautogui.moveRel(55, -85, 1)
 pyautogui.click(button='right')
 
 # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-time.sleep(0.5)
+time.sleep(1)
 pyautogui.click(button='left')
 pyautogui.moveRel(-55, 85, 1)
 pyautogui.click(button='left')
@@ -150,7 +150,7 @@ time.sleep(0.2)
 pyautogui.hotkey('ctrl', 'c')
 time.sleep(0.2)
 mccmdstr = pyperclip.paste()
-time.sleep(0.2) #명령어 복사
+time.sleep(0.3) #명령어 복사
 
 # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
 original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -180,7 +180,7 @@ pyautogui.moveRel(55, -85, 1)
 pyautogui.click(button='right')
 
 # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-time.sleep(0.5)
+time.sleep(1)
 pyautogui.click(button='left')
 pyautogui.moveRel(-55, 85, 1)
 pyautogui.click(button='left')
@@ -214,7 +214,7 @@ for i in range(3,10):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     mccmdstr = pyperclip.paste()
-    time.sleep(0.2) #명령어 복사
+    time.sleep(0.3) #명령어 복사
 
     # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
     original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -244,7 +244,7 @@ for i in range(3,10):
     pyautogui.click(button='right')
 
     # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-    time.sleep(0.5)
+    time.sleep(1)
     pyautogui.click(button='left')
     pyautogui.moveRel(-55, 85, 1)
     pyautogui.click(button='left')
@@ -279,7 +279,7 @@ for i in range(10,26):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     mccmdstr = pyperclip.paste()
-    time.sleep(0.2) #명령어 복사
+    time.sleep(0.3) #명령어 복사
 
     # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
     original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -309,7 +309,7 @@ for i in range(10,26):
     pyautogui.click(button='right')
 
     # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-    time.sleep(0.5)
+    time.sleep(1)
     pyautogui.click(button='left')
     pyautogui.moveRel(-55, 85, 1)
     pyautogui.click(button='left')
@@ -342,7 +342,7 @@ time.sleep(0.2)
 pyautogui.hotkey('ctrl', 'c')
 time.sleep(0.2)
 mccmdstr = pyperclip.paste()
-time.sleep(0.2) #명령어 복사
+time.sleep(0.3) #명령어 복사
 
 # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
 original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -372,7 +372,7 @@ pyautogui.moveRel(55, -85, 1)
 pyautogui.click(button='right')
 
 # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-time.sleep(0.5)
+time.sleep(1)
 pyautogui.click(button='left')
 pyautogui.moveRel(-55, 85, 1)
 pyautogui.click(button='left')
@@ -402,7 +402,7 @@ for i in range(27,53):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     mccmdstr = pyperclip.paste()
-    time.sleep(0.2) #명령어 복사
+    time.sleep(0.3) #명령어 복사
 
     # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
     original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -432,7 +432,7 @@ for i in range(27,53):
     pyautogui.click(button='right')
 
     # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-    time.sleep(0.5)
+    time.sleep(1)
     pyautogui.click(button='left')
     pyautogui.moveRel(-55, 85, 1)
     pyautogui.click(button='left')
@@ -469,7 +469,7 @@ time.sleep(0.2)
 pyautogui.hotkey('ctrl', 'c')
 time.sleep(0.2)
 mccmdstr = pyperclip.paste()
-time.sleep(0.2) #명령어 복사
+time.sleep(0.3) #명령어 복사
 
 # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
 original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -499,7 +499,7 @@ pyautogui.moveRel(55, -85, 1)
 pyautogui.click(button='right')
 
 # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-time.sleep(0.5)
+time.sleep(1)
 pyautogui.click(button='left')
 pyautogui.moveRel(-55, 85, 1)
 pyautogui.click(button='left')
@@ -532,7 +532,7 @@ for i in range(54,80):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     mccmdstr = pyperclip.paste()
-    time.sleep(0.2) #명령어 복사
+    time.sleep(0.3) #명령어 복사
 
     # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
     original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -562,7 +562,7 @@ for i in range(54,80):
     pyautogui.click(button='right')
 
     # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-    time.sleep(0.5)
+    time.sleep(1)
     pyautogui.click(button='left')
     pyautogui.moveRel(-55, 85, 1)
     pyautogui.click(button='left')
@@ -598,7 +598,7 @@ time.sleep(0.2)
 pyautogui.hotkey('ctrl', 'c')
 time.sleep(0.2)
 mccmdstr = pyperclip.paste()
-time.sleep(0.2) #명령어 복사
+time.sleep(0.3) #명령어 복사
 
 # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
 original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -628,7 +628,7 @@ pyautogui.moveRel(55, -85, 1)
 pyautogui.click(button='right')
 
 # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-time.sleep(0.5)
+time.sleep(1)
 pyautogui.click(button='left')
 pyautogui.moveRel(-55, 85, 1)
 pyautogui.click(button='left')
@@ -661,7 +661,7 @@ for i in range(81,100):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     mccmdstr = pyperclip.paste()
-    time.sleep(0.2) #명령어 복사
+    time.sleep(0.3) #명령어 복사
 
     # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
     original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -691,7 +691,7 @@ for i in range(81,100):
     pyautogui.click(button='right')
 
     # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-    time.sleep(0.5)
+    time.sleep(1)
     pyautogui.click(button='left')
     pyautogui.moveRel(-55, 85, 1)
     pyautogui.click(button='left')
@@ -725,7 +725,7 @@ time.sleep(0.2)
 pyautogui.hotkey('ctrl', 'c')
 time.sleep(0.2)
 mccmdstr = pyperclip.paste()
-time.sleep(0.2) #명령어 복사
+time.sleep(0.3) #명령어 복사
 
 # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
 original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -755,7 +755,7 @@ pyautogui.moveRel(55, -85, 1)
 pyautogui.click(button='right')
 
 # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-time.sleep(0.5)
+time.sleep(1)
 pyautogui.click(button='left')
 pyautogui.moveRel(-55, 85, 1)
 pyautogui.click(button='left')
@@ -788,7 +788,7 @@ for i in range(101,106):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     mccmdstr = pyperclip.paste()
-    time.sleep(0.2) #명령어 복사
+    time.sleep(0.3) #명령어 복사
 
     # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
     original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -818,7 +818,7 @@ for i in range(101,106):
     pyautogui.click(button='right')
 
     # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-    time.sleep(0.5)
+    time.sleep(1)
     pyautogui.click(button='left')
     pyautogui.moveRel(-55, 85, 1)
     pyautogui.click(button='left')
@@ -852,7 +852,7 @@ time.sleep(0.2)
 pyautogui.hotkey('ctrl', 'c')
 time.sleep(0.2)
 mccmdstr = pyperclip.paste()
-time.sleep(0.2) #명령어 복사
+time.sleep(0.3) #명령어 복사
 
 # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
 original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -882,7 +882,7 @@ pyautogui.moveRel(55, -85, 1)
 pyautogui.click(button='right')
 
 # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-time.sleep(0.5)
+time.sleep(1)
 pyautogui.click(button='left')
 pyautogui.moveRel(-55, 85, 1)
 pyautogui.click(button='left')
@@ -915,7 +915,7 @@ for i in range(107,129):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     mccmdstr = pyperclip.paste()
-    time.sleep(0.2) #명령어 복사
+    time.sleep(0.3) #명령어 복사
 
     # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
     original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -945,7 +945,7 @@ for i in range(107,129):
     pyautogui.click(button='right')
 
     # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-    time.sleep(0.5)
+    time.sleep(1)
     pyautogui.click(button='left')
     pyautogui.moveRel(-55, 85, 1)
     pyautogui.click(button='left')
@@ -979,7 +979,7 @@ time.sleep(0.2)
 pyautogui.hotkey('ctrl', 'c')
 time.sleep(0.2)
 mccmdstr = pyperclip.paste()
-time.sleep(0.2) #명령어 복사
+time.sleep(0.3) #명령어 복사
 
 # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
 original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -1009,7 +1009,7 @@ pyautogui.moveRel(55, -85, 1)
 pyautogui.click(button='right')
 
 # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-time.sleep(0.5)
+time.sleep(1)
 pyautogui.click(button='left')
 pyautogui.moveRel(-55, 85, 1)
 pyautogui.click(button='left')
@@ -1042,7 +1042,7 @@ for i in range(130,151):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     mccmdstr = pyperclip.paste()
-    time.sleep(0.2) #명령어 복사
+    time.sleep(0.3) #명령어 복사
 
     # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
     original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -1072,7 +1072,7 @@ for i in range(130,151):
     pyautogui.click(button='right')
 
     # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-    time.sleep(0.5)
+    time.sleep(1)
     pyautogui.click(button='left')
     pyautogui.moveRel(-55, 85, 1)
     pyautogui.click(button='left')
@@ -1106,7 +1106,7 @@ time.sleep(0.2)
 pyautogui.hotkey('ctrl', 'c')
 time.sleep(0.2)
 mccmdstr = pyperclip.paste()
-time.sleep(0.2) #명령어 복사
+time.sleep(0.3) #명령어 복사
 
 # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
 original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -1136,7 +1136,7 @@ pyautogui.moveRel(55, -85, 1)
 pyautogui.click(button='right')
 
 # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-time.sleep(0.5)
+time.sleep(1)
 pyautogui.click(button='left')
 pyautogui.moveRel(-55, 85, 1)
 pyautogui.click(button='left')
@@ -1169,7 +1169,7 @@ for i in range(152,173):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     mccmdstr = pyperclip.paste()
-    time.sleep(0.2) #명령어 복사
+    time.sleep(0.3) #명령어 복사
 
     # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
     original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -1199,7 +1199,7 @@ for i in range(152,173):
     pyautogui.click(button='right')
 
     # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-    time.sleep(0.5)
+    time.sleep(1)
     pyautogui.click(button='left')
     pyautogui.moveRel(-55, 85, 1)
     pyautogui.click(button='left')
@@ -1233,7 +1233,7 @@ time.sleep(0.2)
 pyautogui.hotkey('ctrl', 'c')
 time.sleep(0.2)
 mccmdstr = pyperclip.paste()
-time.sleep(0.2) #명령어 복사
+time.sleep(0.3) #명령어 복사
 
 # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
 original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -1263,7 +1263,7 @@ pyautogui.moveRel(55, -85, 1)
 pyautogui.click(button='right')
 
 # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-time.sleep(0.5)
+time.sleep(1)
 pyautogui.click(button='left')
 pyautogui.moveRel(-55, 85, 1)
 pyautogui.click(button='left')
@@ -1296,7 +1296,7 @@ for i in range(174,195):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     mccmdstr = pyperclip.paste()
-    time.sleep(0.2) #명령어 복사
+    time.sleep(0.3) #명령어 복사
 
     # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
     original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -1326,7 +1326,7 @@ for i in range(174,195):
     pyautogui.click(button='right')
 
     # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-    time.sleep(0.5)
+    time.sleep(1)
     pyautogui.click(button='left')
     pyautogui.moveRel(-55, 85, 1)
     pyautogui.click(button='left')
@@ -1360,7 +1360,7 @@ time.sleep(0.2)
 pyautogui.hotkey('ctrl', 'c')
 time.sleep(0.2)
 mccmdstr = pyperclip.paste()
-time.sleep(0.2) #명령어 복사
+time.sleep(0.3) #명령어 복사
 
 # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
 original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -1390,7 +1390,7 @@ pyautogui.moveRel(55, -85, 1)
 pyautogui.click(button='right')
 
 # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-time.sleep(0.5)
+time.sleep(1)
 pyautogui.click(button='left')
 pyautogui.moveRel(-55, 85, 1)
 pyautogui.click(button='left')
@@ -1423,7 +1423,7 @@ for i in range(196,217):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     mccmdstr = pyperclip.paste()
-    time.sleep(0.2) #명령어 복사
+    time.sleep(0.3) #명령어 복사
 
     # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
     original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -1453,7 +1453,7 @@ for i in range(196,217):
     pyautogui.click(button='right')
 
     # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-    time.sleep(0.5)
+    time.sleep(1)
     pyautogui.click(button='left')
     pyautogui.moveRel(-55, 85, 1)
     pyautogui.click(button='left')
@@ -1487,7 +1487,7 @@ time.sleep(0.2)
 pyautogui.hotkey('ctrl', 'c')
 time.sleep(0.2)
 mccmdstr = pyperclip.paste()
-time.sleep(0.2) #명령어 복사
+time.sleep(0.3) #명령어 복사
 
 # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
 original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -1517,7 +1517,7 @@ pyautogui.moveRel(55, -85, 1)
 pyautogui.click(button='right')
 
 # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-time.sleep(0.5)
+time.sleep(1)
 pyautogui.click(button='left')
 pyautogui.moveRel(-55, 85, 1)
 pyautogui.click(button='left')
@@ -1550,7 +1550,7 @@ for i in range(218,239):
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.2)
     mccmdstr = pyperclip.paste()
-    time.sleep(0.2) #명령어 복사
+    time.sleep(0.3) #명령어 복사
 
     # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
     original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
@@ -1580,7 +1580,7 @@ for i in range(218,239):
     pyautogui.click(button='right')
 
     # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
-    time.sleep(0.5)
+    time.sleep(1)
     pyautogui.click(button='left')
     pyautogui.moveRel(-55, 85, 1)
     pyautogui.click(button='left')
