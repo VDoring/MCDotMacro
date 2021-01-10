@@ -9,8 +9,7 @@ Mural Generator에서 '커맨드블럭에 명령어 붙여넣기' 방식을 이�
 ----------------------
 ### 사용방법
 
-(추가예정)
-(추후 영상링크 추가)
+#### 가이드 영상 보기 : https://www.youtube.com/watch?v=E0ckIbTKDog
 
 #### 프로그램 다운로드 : https://github.com/VDoring/MCDotMacro/releases
 #### 이미지 -> 도트 변환 사이트 : https://mcstacker.net/murals/
