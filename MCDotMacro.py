@@ -124,6 +124,7 @@ def BlockSetMinus34():
     # 마인크래프트에서 커맨드블럭 입력창으로 다시 들어간다.(윈도우로 마우스커서전환 하기 위함)
     pyautogui.click(button='right')
 
+    global sys_now_cmdnum
     sys_now_cmdnum += 1
 
 def BlockSetMinus35():
@@ -179,6 +180,7 @@ def BlockSetMinus35():
     # 마인크래프트에서 커맨드블럭 입력창으로 다시 들어간다.(윈도우로 마우스커서전환 하기 위함)
     pyautogui.click(button='right')
 
+    global sys_now_cmdnum
     sys_now_cmdnum += 1
 
 def BlockSetMinus33():
@@ -234,6 +236,7 @@ def BlockSetMinus33():
     # 마인크래프트에서 커맨드블럭 입력창으로 다시 들어간다.(윈도우로 마우스커서전환 하기 위함)
     pyautogui.click(button='right')
 
+    global sys_now_cmdnum
     sys_now_cmdnum += 1
 
 def BlockSetMinus35_CanExit():
@@ -289,6 +292,7 @@ def BlockSetMinus35_CanExit():
     # 마인크래프트에서 커맨드블럭 입력창으로 다시 들어간다.(윈도우로 마우스커서전환 하기 위함)
     pyautogui.click(button='right')
 
+    global sys_now_cmdnum
     sys_now_cmdnum += 1
     if sys_now_cmdnum >= user_max_cmdnum: #유저가 입력한 수만큼 작업했을경우
         msgbox.showinfo("알림","작업이 완료되었습니다.")
@@ -347,6 +351,7 @@ def BlockSetMinus32_CanExit():
     # 마인크래프트에서 커맨드블럭 입력창으로 다시 들어간다.(윈도우로 마우스커서전환 하기 위함)
     pyautogui.click(button='right')
 
+    global sys_now_cmdnum
     sys_now_cmdnum += 1
     if sys_now_cmdnum >= user_max_cmdnum: #유저가 입력한 수만큼 작업했을경우
         msgbox.showinfo("알림","작업이 완료되었습니다.")
@@ -405,6 +410,7 @@ def BlockSetMinus33_CanExit():
     # 마인크래프트에서 커맨드블럭 입력창으로 다시 들어간다.(윈도우로 마우스커서전환 하기 위함)
     pyautogui.click(button='right')
 
+    global sys_now_cmdnum
     sys_now_cmdnum += 1
     if sys_now_cmdnum >= user_max_cmdnum: #유저가 입력한 수만큼 작업했을경우
         msgbox.showinfo("알림","작업이 완료되었습니다.")
@@ -463,6 +469,7 @@ def BlockSetMinus31_CanExit():
     # 마인크래프트에서 커맨드블럭 입력창으로 다시 들어간다.(윈도우로 마우스커서전환 하기 위함)
     pyautogui.click(button='right')
 
+    global sys_now_cmdnum
     sys_now_cmdnum += 1
     if sys_now_cmdnum >= user_max_cmdnum: #유저가 입력한 수만큼 작업했을경우
         msgbox.showinfo("알림","작업이 완료되었습니다.")
