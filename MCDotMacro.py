@@ -18,7 +18,7 @@ user_max_cmdnum = 0
 is_exit = 0 #유저가 프로그램을 그냥 종료했는지 확인
 
 root = Tk() #(root는 그냥 사용자가 임의로 설정할 수 있는 이름이다)
-root.title("MCDotMacro v0.2 (멀티라인 버전)") # 창 제목
+root.title("MCDotMacro v0.2.1 (멀티라인 버전)") # 창 제목
 root.geometry("400x290+760+400") # 창 크기
 root.resizable(False,False) # x,y 값 변경 불가(창 크기 변경불가)
 
@@ -579,7 +579,7 @@ BlockSetMinus34_First()
 
 #[3] 2번쨰 동작---
 original_nextnum_selected = pyautogui.locateOnScreen('2NXTLine.png')
-if original_1_selected == None: #2번명령어칸 이미지가 다를떄 다른 이미지타입을 검사
+if original_nextnum_selected == None: #2번명령어칸 이미지가 다를떄 다른 이미지타입을 검사
     original_nextnum_selected = pyautogui.locateOnScreen('2AnoNXTLine.png')
 center_nextnum_selected = pyautogui.center(original_nextnum_selected)
 pyautogui.click(center_nextnum_selected) #2번명령어 클릭
