@@ -65,7 +65,7 @@ if is_exit == 0: #유저가 프로그램창을 그냥 종료했다면
     sys.exit() #프로그램 종료
 
 #[1-1] 함수 셋팅---
-def BlockSetMinus34(): 
+def BlockSetMinus34_First(): 
     # 밑의 명령어칸을 클릭하고 명령어를 복사한다.
     original_cmdmsgbox = pyautogui.locateOnScreen('commandBox.png')
     center_cmdmsgbox = pyautogui.center(original_cmdmsgbox)
@@ -104,6 +104,62 @@ def BlockSetMinus34():
 
     # 마인크래프트에서 커맨드블록 주변에 레드스톤 횃불을 설치한다.
     pyautogui.moveRel(0, 35, 1)
+    pyautogui.click(button='right')
+    pyautogui.moveRel(55, -85, 1)
+    pyautogui.click(button='right')
+
+    # 마인크래프트에서 커맨드블록 주변의 레드스톤 횃불을 제거한다.
+    time.sleep(1)
+    pyautogui.click(button='left')
+    pyautogui.moveRel(-55, 85, 1)
+    pyautogui.click(button='left')
+    pyautogui.moveRel(0, -34, 1)
+
+    # 마인크래프트에서 커맨드블럭을 제거하고 다시 설치한다.
+    pyautogui.click(button='left')
+    pyautogui.scroll(-1) #마크 2번슬롯 이동
+    pyautogui.click(button='right')
+    pyautogui.scroll(1) #마크 1번슬롯 이동
+
+    # 마인크래프트에서 커맨드블럭 입력창으로 다시 들어간다.(윈도우로 마우스커서전환 하기 위함)
+    pyautogui.click(button='right')
+
+    global sys_now_cmdnum
+    sys_now_cmdnum += 1
+
+def BlockSetMinus34():
+    original_cmdmsgbox = pyautogui.locateOnScreen('commandBox.png')
+    center_cmdmsgbox = pyautogui.center(original_cmdmsgbox)
+    pyautogui.click(center_cmdmsgbox)
+    time.sleep(0.2)
+    pyautogui.hotkey('ctrl', 'c')
+    time.sleep(0.2)
+    mccmdstr = pyperclip.paste()
+    time.sleep(0.3) #명령어 복사
+
+    # 마인크래프트 커맨드블럭 명령어 입력칸으로 이동
+    original_minecraft_cmd_box = pyautogui.locateOnScreen('mcCMDbox.png')
+    center_minecraft_cmd_box = pyautogui.center(original_minecraft_cmd_box)
+    pyautogui.click(center_minecraft_cmd_box)
+    pyautogui.click(center_minecraft_cmd_box)
+
+    #커맨드블럭 명령어 입력 후 닫기
+    time.sleep(0.3)
+    pyautogui.write(mccmdstr) #명령어 붙여넣기
+    time.sleep(0.3)
+    original_minecraft_cmd_ok = pyautogui.locateOnScreen('mcCMDok.png')
+    center_minecraft_cmd_ok = pyautogui.center(original_minecraft_cmd_ok)
+    center_minecraft_cmd_ok_x = center_minecraft_cmd_ok.x
+    center_minecraft_cmd_ok_y = center_minecraft_cmd_ok.y - 30
+    pyautogui.moveTo(center_minecraft_cmd_ok_x, center_minecraft_cmd_ok_y) #마크 커맨드블럭 '완료'버튼보다 좀 더 위로 마우스 설정
+    pyautogui.click(button='left') #클릭하여 윈도우 전환
+    center_minecraft_cmd_ok_y = center_minecraft_cmd_ok.y
+    pyautogui.moveTo(center_minecraft_cmd_ok_x, center_minecraft_cmd_ok_y) #마크 커맨드블럭 '완료'버튼으로 위치설정
+    pyautogui.click(button='left') #완료버튼 눌러 커맨드블럭 창 나가기
+    #time.sleep(0.2)
+
+    # 마인크래프트에서 커맨드블록 주변에 레드스톤 횃불을 설치한다.
+    pyautogui.moveRel(0, 35, 1)  #3번째 인자는 소수로도 사용할 수 있음!
     pyautogui.click(button='right')
     pyautogui.moveRel(55, -85, 1)
     pyautogui.click(button='right')
@@ -517,7 +573,7 @@ original_1_selected = pyautogui.locateOnScreen('1selectedNXTLine.png')
 center_1_selected = pyautogui.center(original_1_selected)
 pyautogui.click(center_1_selected)
 cmdnum_first_position = pyautogui.position() #1번명령어 버튼의 위치를 저장(다음라인의 명령어버튼 위치를 설정하기 위함)
-BlockSetMinus34()
+BlockSetMinus34_First()
 
 #[3] 2번쨰 동작---
 original_nextnum_selected = pyautogui.locateOnScreen('2NXTLine.png')
