@@ -533,6 +533,7 @@ def BlockSetMinus31_CanExit():
 
 
 def RecursiveBlockSetMinus31(start,end):
+    global cmdnum_first_position
     cmdnum_next_position_x = cmdnum_first_position.x - (34*4)
     cmdnum_next_position_y += 15
     pyautogui.moveTo(cmdnum_next_position_x, cmdnum_next_position_y)
@@ -545,6 +546,7 @@ def RecursiveBlockSetMinus31(start,end):
         BlockSetMinus35_CanExit()
 
 def RecursiveBlockSetMinus32(start,end):
+    global cmdnum_first_position
     cmdnum_next_position_x = cmdnum_first_position.x - (34*4)
     cmdnum_next_position_y += 15
     pyautogui.moveTo(cmdnum_next_position_x, cmdnum_next_position_y)
@@ -557,6 +559,7 @@ def RecursiveBlockSetMinus32(start,end):
         BlockSetMinus35_CanExit()
 
 def RecursiveBlockSetMinus33(start,end):
+    global cmdnum_first_position
     cmdnum_next_position_x = cmdnum_first_position.x - (34*4)
     cmdnum_next_position_y += 15
     pyautogui.moveTo(cmdnum_next_position_x, cmdnum_next_position_y)
