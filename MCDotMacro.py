@@ -570,6 +570,8 @@ def RecursiveBlockSetMinus33(start,end):
 
 #[2] 1번쨰(최초) 동작---
 original_1_selected = pyautogui.locateOnScreen('1selectedNXTLine.png')
+if original_1_selected == None: #1번명령어칸 이미지가 다를떄 다른 이미지타입을 검사
+    original_1_selected = pyautogui.locateOnScreen('1AnoselectedNXTLine.png')
 center_1_selected = pyautogui.center(original_1_selected)
 pyautogui.click(center_1_selected)
 cmdnum_first_position = pyautogui.position() #1번명령어 버튼의 위치를 저장(다음라인의 명령어버튼 위치를 설정하기 위함)
@@ -577,6 +579,8 @@ BlockSetMinus34_First()
 
 #[3] 2번쨰 동작---
 original_nextnum_selected = pyautogui.locateOnScreen('2NXTLine.png')
+if original_1_selected == None: #2번명령어칸 이미지가 다를떄 다른 이미지타입을 검사
+    original_nextnum_selected = pyautogui.locateOnScreen('2AnoNXTLine.png')
 center_nextnum_selected = pyautogui.center(original_nextnum_selected)
 pyautogui.click(center_nextnum_selected) #2번명령어 클릭
 cmdnum_prev_position = pyautogui.position() #2번명령어 마우스 위치값 저장(다음 명령어위치를 지정할때 사용)
