@@ -1,5 +1,8 @@
 # MCDotMacro
 ## Minecraft Mural Generator Based Macro
+
+<img src="https://user-images.githubusercontent.com/50266731/104844336-1fefec00-5913-11eb-828a-07c45ef49162.png" width="90%">
+
 ----------------------
 ### 소개
 Mural Generator에서 '커맨드블럭에 명령어 붙여넣기' 방식을 이용할시 사용자가 일일이 입력하지 않도록 해주는 자동입력 프로그램입니다.
