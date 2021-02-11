@@ -1,5 +1,5 @@
 # MCDotMacro by VDoring.
-# 프로그램 버전:V0.2  (GitHub Release v0.1.1 - 코드 최적화 버전)
+# 프로그램 버전:V0.2.2  (GitHub Release v0.1.1 - 코드 최적화 버전)
 # Command Length 적정길이 : 2000 ~ 4000 예상(테스트필요)
 
 
@@ -18,7 +18,7 @@ user_max_cmdnum = 0
 is_exit = 0 #유저가 프로그램을 그냥 종료했는지 확인
 
 root = Tk() #(root는 그냥 사용자가 임의로 설정할 수 있는 이름이다)
-root.title("MCDotMacro v0.2.1 (멀티라인 버전)") # 창 제목
+root.title("MCDotMacro v0.2.2 (멀티라인 버전)") # 창 제목
 root.geometry("400x290+760+400") # 창 크기
 root.resizable(False,False) # x,y 값 변경 불가(창 크기 변경불가)
 
@@ -534,6 +534,7 @@ def BlockSetMinus31_CanExit():
 
 def RecursiveBlockSetMinus31(start,end):
     global cmdnum_first_position
+    global cmdnum_next_position_y
     cmdnum_next_position_x = cmdnum_first_position.x - (34*4)
     cmdnum_next_position_y += 15
     pyautogui.moveTo(cmdnum_next_position_x, cmdnum_next_position_y)
@@ -547,6 +548,7 @@ def RecursiveBlockSetMinus31(start,end):
 
 def RecursiveBlockSetMinus32(start,end):
     global cmdnum_first_position
+    global cmdnum_next_position_y
     cmdnum_next_position_x = cmdnum_first_position.x - (34*4)
     cmdnum_next_position_y += 15
     pyautogui.moveTo(cmdnum_next_position_x, cmdnum_next_position_y)
@@ -560,6 +562,7 @@ def RecursiveBlockSetMinus32(start,end):
 
 def RecursiveBlockSetMinus33(start,end):
     global cmdnum_first_position
+    global cmdnum_next_position_y
     cmdnum_next_position_x = cmdnum_first_position.x - (34*4)
     cmdnum_next_position_y += 15
     pyautogui.moveTo(cmdnum_next_position_x, cmdnum_next_position_y)
